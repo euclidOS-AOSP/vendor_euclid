@@ -29,4 +29,7 @@
          double tap gestures in non-action areas in the lock screen and launcher workspace to go to
          sleep. -->
     <bool name="config_supportDoubleTapSleep">true</bool>
+
+    <!-- Circle to search -->
+    <string name="config_defaultContextualSearchPackageName" translatable="false">com.google.android.googlequicksearchbox</string>
 </resources>
