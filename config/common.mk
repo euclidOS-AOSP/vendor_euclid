@@ -98,6 +98,15 @@ USE_DEX2OAT_DEBUG := false
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
+# APEX
+DISABLE_DEXPREOPT_CHECK := true
+
+PRODUCT_PACKAGES += \
+    com.google.android.permission
+
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+    system/apex/com.google.android.permission.apex
+
 # Config
 PRODUCT_PACKAGES += \
     SimpleDeviceConfig
