@@ -27,3 +27,16 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/android.hardware.biometrics.face.xml
 endif
+
+# Pixel Clocks
+WITH_GMS := true
+$(call inherit-product, vendor/pixel/clocks/products/clocks.mk)
+
+# Pixel GMS
+$(call inherit-product, vendor/pixel/gms/products/gms.mk)
+
+# Pixel Launcher
+ifeq ($(TARGET_INCLUDE_PIXEL_LAUNCHER),true)
+$(call inherit-product, vendor/pixel/launcher/products/launcher.mk)
+$(call inherit-product, vendor/pixel/themepicker/products/themepicker.mk)
+endif
