@@ -106,6 +106,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/apex/com.google.android.permission.apex
 
+# Euclid interfaces
+PRODUCT_PACKAGES += \
+    framework_compatibility_matrix.euclid.xml
+
 # Config
 PRODUCT_PACKAGES += \
     SimpleDeviceConfig
@@ -266,7 +270,6 @@ CUSTOM_LOCALES += \
     cy_GB \
     fur_IT
 
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/euclid/config/device_framework_matrix.xml
 
 include vendor/euclid/config/version.mk
 include vendor/euclid/config/euclid.mk
