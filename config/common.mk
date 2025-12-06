@@ -300,6 +300,9 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/euclid/config/device_framew
 
 include vendor/euclid/config/version.mk
 
+# certification
+include vendor/certification/config.mk
+
 -include vendor/euclid-priv/keys/keys.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
