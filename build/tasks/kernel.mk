@@ -210,7 +210,7 @@ else
         $(error "NO KERNEL CONFIG")
     else
         ifneq ($(TARGET_FORCE_PREBUILT_KERNEL),)
-            ifneq ($(filter OFFICIAL,$(EUCLID_BUILDTYPE)),)
+            ifneq ($(filter OFFICIAL,$(EUCLID_BUILD_TYPE)),)
                 $(error "PREBUILT KERNEL IS NOT ALLOWED ON OFFICIAL BUILDS!")
             else
                 $(warning **********************************************************)
