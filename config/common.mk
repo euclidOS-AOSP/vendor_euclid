@@ -37,27 +37,9 @@ endif
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.strictmode.disable=true
 endif
 
-# Enable blur
-TARGET_ENABLE_BLUR ?= true
-ifeq ($(TARGET_ENABLE_BLUR),true)
-PRODUCT_SYSTEM_PROPERTIES += \
-    ro.custom.blur.enable=true \
-    persist.sysui.disableBlur=false \
-    ro.surface_flinger.supports_background_blur=1
-else
-PRODUCT_SYSTEM_PROPERTIES += \
-    ro.custom.blur.enable=false \
-    persist.sysui.disableBlur=true \
-    ro.surface_flinger.supports_background_blur=0
-endif
-
 # Allow OTA downgrades
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.ota.allow_downgrade=true
-
-# BtHelper
-PRODUCT_PACKAGES += \
-    BtHelper
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -187,18 +169,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # on supported devices with Deep Press input classifier HALs and models
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.input.video_enabled=false
- 
-# FaceUnlock
-ifneq ($(TARGET_FACE_UNLOCK_SUPPORTED),false)
-PRODUCT_PACKAGES += \
-    FaceUnlock
-
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.face.sense_service=true
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/android.hardware.biometrics.face.xml
-endif
 
 # FRP
 PRODUCT_COPY_FILES += \
@@ -299,6 +269,7 @@ CUSTOM_LOCALES += \
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/euclid/config/device_framework_matrix.xml
 
 include vendor/euclid/config/version.mk
+include vendor/euclid/config/euclid.mk
 
 # certification
 include vendor/certification/config.mk
