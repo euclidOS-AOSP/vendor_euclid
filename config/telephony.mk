@@ -7,9 +7,6 @@ PRODUCT_PACKAGES += \
     messaging \
     Stk
 
-# Default ringtone
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.ringtone=The_next_adventure.ogg
 
 # Tethering - allow without requiring a provisioning app
 # (for devices that check this)
