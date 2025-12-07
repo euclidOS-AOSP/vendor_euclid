@@ -32,6 +32,9 @@ endif
 WITH_GMS := true
 $(call inherit-product, vendor/pixel/clocks/products/clocks.mk)
 
+# Pixel Sounds
+$(call inherit-product, vendor/pixel/sounds/products/sounds.mk)
+
 # Pixel GMS
 $(call inherit-product, vendor/pixel/gms/products/gms.mk)
 
