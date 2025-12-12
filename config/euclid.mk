@@ -2,6 +2,10 @@
 PRODUCT_PACKAGES += \
     BtHelper
 
+# Extra Packages
+PRODUCT_PACKAGES += \
+    GameSpace
+
 # Enable blur
 TARGET_ENABLE_BLUR ?= true
 ifeq ($(TARGET_ENABLE_BLUR),true)
