@@ -42,8 +42,16 @@ $(call inherit-product, vendor/pixel/sounds/products/sounds.mk)
 # Pixel GMS
 $(call inherit-product, vendor/pixel/gms/products/gms.mk)
 
+# Pixel ThemePicker
+$(call inherit-product, vendor/pixel/themepicker/products/themepicker.mk)
+
+# ThemePicker Overlay
+ifneq ($(TARGET_INCLUDE_PIXEL_LAUNCHER),true)
+PRODUCT_PACKAGES += \
+   PixelWallpaperOverlay
+endif
+
 # Pixel Launcher
 ifeq ($(TARGET_INCLUDE_PIXEL_LAUNCHER),true)
 $(call inherit-product, vendor/pixel/launcher/products/launcher.mk)
-$(call inherit-product, vendor/pixel/themepicker/products/themepicker.mk)
 endif

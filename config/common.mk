@@ -262,8 +262,7 @@ PRODUCT_PACKAGES += \
     DocumentsUIOverlay \
     NetworkStackOverlay \
     NfcOverlay \
-    PermissionControllerOverlay \
-    PixelWallpaperOverlay
+    PermissionControllerOverlay 
 
 # Translations
 CUSTOM_LOCALES += \
