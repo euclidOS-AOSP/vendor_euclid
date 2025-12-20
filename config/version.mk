@@ -13,7 +13,9 @@
 # limitations under the License.
 
 ANDROID_VERSION := 16
-EUCLID_VERSION := 3.1
+EUCLID_VERSION := v3.1
+EUCLID_CODENAME := Helios
+EUCLID_VERSION_DISPLAY := $(EUCLID_CODENAME)|$(EUCLID_VERSION)
 
 EUCLID_BUILD_TYPE ?= UNOFFICIAL
 EUCLID_MAINTAINER ?= UNKNOWN
@@ -38,7 +40,7 @@ ifeq ($(EUCLID_BUILD_TYPE), OFFICIAL)
     endif
 endif
 
-EUCLID_VERSION := $(EUCLID_VERSION)-$(EUCLID_BUILD)-$(EUCLID_BUILD_DATE)-$(EUCLID_BUILD_TYPE)
+EUCLID_BUILD_VERSION := $(EUCLID_VERSION)-$(EUCLID_CODENAME)-$(EUCLID_BUILD)-$(EUCLID_BUILD_DATE)-$(EUCLID_BUILD_TYPE)
 
 EUCLID_MOD_VERSION :=$(ANDROID_VERSION)-$(EUCLID_VERSION)
 EUCLID_DISPLAY_VERSION := euclidOS-$(EUCLID_VERSION)
@@ -47,17 +49,19 @@ EUCLID_FINGERPRINT := euclidOS/$(EUCLID_MOD_VERSION)/$(TARGET_PRODUCT_SHORT)/$(E
 
 # euclidOS System Version
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.euclid.version=$(EUCLID_DISPLAY_VERSION) \
+  ro.euclid.version=$(EUCLID_VERSION)  \
+  ro.euclid.codename=$(EUCLID_CODENAME) \
   ro.euclid.build.status=$(EUCLID_BUILD_TYPE) \
   ro.modversion=$(EUCLID_MOD_VERSION) \
   ro.euclid.build.date=$(EUCLID_BUILD_DATE) \
   ro.euclid.buildtype=$(EUCLID_BUILD_TYPE) \
   ro.euclid.fingerprint=$(EUCLID_FINGERPRINT) \
   ro.euclid.device=$(EUCLID_BUILD) \
-  org.euclid.version=$(EUCLID_VERSION) \
-  ro.maintainer.name=$(EUCLID_MAINTAINER)
+  org.euclid.display.version=$(EUCLID_DISPLAY_VERSION) \
+  ro.maintainer.name=$(EUCLID_MAINTAINER) \
+  ro.euclid.version.display=$(EUCLID_VERSION_DISPLAY)
 
 # euclidOS custom build version
-BUILD_DISPLAY_ID := euclidOS-$(shell date +%Y%m%d-%H%M)-$(EUCLID_BUILD_TYPE)
+BUILD_DISPLAY_ID := euclidOS-$(EUCLID_VERSION)|$(EUCLID_CODENAME)-$(EUCLID_BUILD_DATE)-$(EUCLID_BUILD_TYPE)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.display.id=$(BUILD_DISPLAY_ID)
