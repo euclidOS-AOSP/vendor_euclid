@@ -15,7 +15,7 @@
 ANDROID_VERSION := 16
 EUCLID_VERSION := v3.1
 EUCLID_CODENAME := Helios
-EUCLID_VERSION_DISPLAY := $(EUCLID_CODENAME)|$(EUCLID_VERSION)
+EUCLID_VERSION_DISPLAY := $(EUCLID_CODENAME)_|_$(EUCLID_VERSION)
 
 EUCLID_BUILD_TYPE ?= UNOFFICIAL
 EUCLID_MAINTAINER ?= UNKNOWN
@@ -58,10 +58,16 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
   ro.euclid.fingerprint=$(EUCLID_FINGERPRINT) \
   ro.euclid.device=$(EUCLID_BUILD) \
   org.euclid.display.version=$(EUCLID_DISPLAY_VERSION) \
-  ro.maintainer.name=$(EUCLID_MAINTAINER) \
   ro.euclid.version.display=$(EUCLID_VERSION_DISPLAY)
+
+# euclidOS Properties
+PRODUCT_SYSTEM_PROPERTIES += \
+  ro.euclid.display.device=$(EUCLID_DEVICE) \
+  ro.euclid.processor=$(EUCLID_PROCESSOR) \
+  ro.maintainer.name=$(EUCLID_MAINTAINER)
 
 # euclidOS custom build version
 BUILD_DISPLAY_ID := euclidOS-$(EUCLID_VERSION)|$(EUCLID_CODENAME)-$(EUCLID_BUILD_DATE)-$(EUCLID_BUILD_TYPE)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.display.id=$(BUILD_DISPLAY_ID)
+
