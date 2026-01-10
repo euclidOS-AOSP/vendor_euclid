@@ -22,7 +22,8 @@ SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 $(EUCLID_TARGET_PACKAGE): $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(EUCLID_TARGET_PACKAGE)
-	$(hide) $(SHA256) $(EUCLID_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(EUCLID_TARGET_PACKAGE).sha256sum
+	$(hide) $(SHA256) $(EUCLID_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(EUCLID_TARGET_PACKAGE).sha256sum		
+	$(hide) ./vendor/euclid/build/tools/generate_build_json.py $(EUCLID_TARGET_PACKAGE)
 	$(hide) ./vendor/euclid/build/tasks/ascii_output.sh
 	@echo "Package Complete: $(EUCLID_TARGET_PACKAGE)" >&2
 
