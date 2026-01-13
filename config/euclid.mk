@@ -4,7 +4,9 @@ PRODUCT_PACKAGES += \
 
 # Extra Packages
 PRODUCT_PACKAGES += \
-    GameSpace
+    GameSpace \
+    LMOFreeform \
+    LMOFreeformSidebar 
 
 # Enable blur
 TARGET_ENABLE_BLUR ?= true
