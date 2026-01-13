@@ -6,7 +6,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     GameSpace \
     LMOFreeform \
-    LMOFreeformSidebar 
+    LMOFreeformSidebar \
+    OmniJaws
 
 # Enable blur
 TARGET_ENABLE_BLUR ?= true
