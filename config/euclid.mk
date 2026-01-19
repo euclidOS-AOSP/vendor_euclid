@@ -9,6 +9,12 @@ PRODUCT_PACKAGES += \
     LMOFreeformSidebar \
     OmniJaws
 
+# ColumbusService
+ifeq ($(TARGET_SUPPORTS_QUICK_TAP),true)
+PRODUCT_PACKAGES += \
+    ColumbusService
+endif
+
 # Enable blur
 TARGET_ENABLE_BLUR ?= true
 ifeq ($(TARGET_ENABLE_BLUR),true)
