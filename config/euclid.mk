@@ -4,7 +4,16 @@ PRODUCT_PACKAGES += \
 
 # Extra Packages
 PRODUCT_PACKAGES += \
-    GameSpace
+    GameSpace \
+    LMOFreeform \
+    LMOFreeformSidebar \
+    OmniJaws
+
+# ColumbusService
+ifeq ($(TARGET_SUPPORTS_QUICK_TAP),true)
+PRODUCT_PACKAGES += \
+    ColumbusService
+endif
 
 # Enable blur
 TARGET_ENABLE_BLUR ?= true
