@@ -42,13 +42,13 @@ $(EUCLID_TARGET_PACKAGE): $(INTERNAL_OTA_PACKAGE_TARGET)
 	ZIP_PATH="$(EUCLID_TARGET_PACKAGE)"; \
 	./vendor/euclid/build/tools/generate_build_json.py "$${ZIP_PATH}"; \
 	./vendor/euclid/build/tasks/ascii_output.sh; \
-	echo -e "${WHITE}${RESET} ${BOLD}Version${RESET}:     ${WHITE}|$(EUCLID_VERSION)${RESET}"; \
-	echo -e "${WHITE}${RESET} ${BOLD}Device${RESET}:      ${WHITE}|$(PRODUCT_DEVICE)${RESET}"; \
-	echo -e "${WHITE}${RESET} ${BOLD}Maintainer${RESET}:  ${WHITE}|$(EUCLID_MAINTAINER)${RESET}"; \
-	echo -e "${WHITE}${RESET} ${BOLD}File Size${RESET}:   ${WHITE}|$${FILE_SIZE}${RESET}"; \
-	echo -e "${WHITE}${RESET} ${BOLD}Build Time${RESET}:  ${WHITE}|$${DURATION_FORMAT}${RESET}"; \
-	echo -e "${WHITE}${RESET} ${BOLD}Zip File${RESET}:    ${WHITE}|$$(basename "$${ZIP_PATH}")${RESET}"; \
-	echo -e "${BLUE} Output:${RESET}      ${WHITE}|$${ZIP_PATH}${RESET}"; \
+	echo -e "${WHITE}${RESET} ${BOLD}Version${RESET}     ${WHITE}: $(EUCLID_VERSION)${RESET}"; \
+	echo -e "${WHITE}${RESET} ${BOLD}Device${RESET}      ${WHITE}: $(PRODUCT_DEVICE)${RESET}"; \
+	echo -e "${WHITE}${RESET} ${BOLD}Maintainer${RESET}  ${WHITE}: $(EUCLID_MAINTAINER)${RESET}"; \
+	echo -e "${WHITE}${RESET} ${BOLD}File Size${RESET}   ${WHITE}: $${FILE_SIZE}${RESET}"; \
+	echo -e "${WHITE}${RESET} ${BOLD}Build Time${RESET}  ${WHITE}: $${DURATION_FORMAT}${RESET}"; \
+	echo -e "${WHITE}${RESET} ${BOLD}Zip File${RESET}    ${WHITE}: $$(basename "$${ZIP_PATH}")${RESET}"; \
+	echo -e "${BLUE} Output ${RESET}      ${WHITE}: $${ZIP_PATH}${RESET}"; \
 	echo -e "${PURPLE}===========================================================${CL_RST}"; \
 	echo -e "${CLBLD}${CLGRN}            🚀 BUILD COMPLETED SUCCESSFULLY 🚀             ${CL_RST}"; \
 	echo -e "${PURPLE}===========================================================${CL_RST}"; \
