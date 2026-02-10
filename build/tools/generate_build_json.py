@@ -47,7 +47,7 @@ def main():
     sha256 = calculate_hash(rom_path, "sha256")
 
     # Read ALL authoritative values from build.prop
-    device = get_prop_from_build_prop(out_dir, "ro.product.system.device")
+    device = get_prop_from_build_prop(out_dir, "ro.euclid.device")
     oem = get_prop_from_build_prop(out_dir, "ro.product.system.brand")
     version = get_prop_from_build_prop(out_dir, "ro.euclid.version")
     maintainer = get_prop_from_build_prop(out_dir, "ro.maintainer.name")
