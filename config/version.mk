@@ -48,7 +48,7 @@ EUCLID_DISPLAY_BUILDTYPE := $(EUCLID_BUILD_TYPE)
 EUCLID_FINGERPRINT := euclidOS/$(EUCLID_MOD_VERSION)/$(TARGET_PRODUCT_SHORT)/$(EUCLID_BUILD_DATE)
 
 # euclidOS System Version
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_PRODUCT_PROPERTIES += \
   ro.euclid.version=$(EUCLID_VERSION)  \
   ro.euclid.codename=$(EUCLID_CODENAME) \
   ro.euclid.build.status=$(EUCLID_BUILD_TYPE) \
@@ -61,7 +61,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
   ro.euclid.version.display=$(EUCLID_VERSION_DISPLAY)
 
 # euclidOS Properties
-PRODUCT_SYSTEM_PROPERTIES += \
+PRODUCT_PRODUCT_PROPERTIES += \
   ro.euclid.display.device=$(EUCLID_DEVICE) \
   ro.euclid.processor=$(EUCLID_PROCESSOR) \
   ro.maintainer.name=$(EUCLID_MAINTAINER)
