@@ -1,4 +1,4 @@
-# Copyright (C) 2025 euclidOS
+# Copyright (C) 2026 EuclidOS 
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,8 +13,8 @@
 # limitations under the License.
 
 ANDROID_VERSION := 16
-EUCLID_VERSION := v3.2
-EUCLID_CODENAME := Axiom
+EUCLID_VERSION := v3.3
+EUCLID_CODENAME := Bisector
 EUCLID_VERSION_DISPLAY := $(EUCLID_CODENAME)_|_$(EUCLID_VERSION)
 
 EUCLID_BUILD_TYPE ?= UNOFFICIAL
